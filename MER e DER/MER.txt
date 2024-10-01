@@ -1,0 +1,16 @@
+---MER do Trabalho Intermediário---
+     --O que é o MER e DER?--
+
+
+
+Entidade: Veículo - Proprietário
+
+Atributo: 
+Veículo - *ID*, marca, modelo, cor, ano, preço;
+Proprietário - *ID*, nome, sexo, idade, tem carta;
+
+
+Relacionamento:
+
+- Proprietário possui no mín 1 e no máx vários Veículos (1, n);
+- Veículo é possuído no mín 0 e no máx vário Proprietários (0, n);

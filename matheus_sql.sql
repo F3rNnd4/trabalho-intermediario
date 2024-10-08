@@ -65,7 +65,7 @@ SELECT * FROM veiculos WHERE marca LIKE 'B%';
 
 SELECT * FROM veiculos WHERE ano BETWEEN 2020 AND 2021;
 
-/*updates*/
+//updates
 
 UPDATE veiculos SET cor = 'Verde' WHERE id = 3;
 
@@ -77,23 +77,68 @@ UPDATE veiculos SET cor = 'Marrom' WHERE id = 107;
 
 UPDATE veiculos SET cor = 'Azulado Prata' WHERE id = 7;
 
-UPDATE veiculos SET preco = 250000.00 WHERE modelo= 'Nivus';
+UPDATE veiculos SET preco = 250000.00 WHERE modelo = 'Nivus';
 
 UPDATE veiculos SET modelo = 'Volkswagen' WHERE preco = 85000.00;
 
-UPDATE veiculos SET marca = 'VW Nivus' WHERE modelo = 'Nivus'
+UPDATE veiculos SET marca = 'VW Nivus' WHERE modelo = 'Nivus';
 
 UPDATE veiculos SET ano = '1900' WHERE ano = 2017;
 
-UPDATE veiculos SET cor = 'Amarelo' WHERE preco 250000.00;
+UPDATE veiculos SET cor = 'Amarelo' WHERE preco = 250000.00;  -- Corrigido: adicionado "="
 
 UPDATE veiculos SET ano = '2000' WHERE cor = 'Amarelo';
 
-UPDATE veiculos SET 
+UPDATE veiculos SET cor = 'Preto' WHERE id = 1;
 
+UPDATE veiculos SET cor = 'Branco' WHERE id = 2;
 
- 
+UPDATE veiculos SET preco = 100000.00 WHERE id = 4;
 
+UPDATE veiculos SET modelo = 'Gol' WHERE id = 5;
 
+UPDATE veiculos SET marca = 'Fiat' WHERE modelo = 'Uno';
 
+/*deletes*/
 
+DELETE FROM veiculos WHERE cor = 'Vermelho' AND ano = 2021;
+
+DELETE FROM veiculos WHERE marca = 'Ford' AND preco < 100000.00;
+
+DELETE FROM veiculos WHERE modelo LIKE 'Civic';
+
+DELETE FROM veiculos WHERE ano = 2022 AND preco > 200000.00;
+
+DELETE FROM veiculos WHERE cor = 'Azul' AND modelo IN ('Focus', 'Tucson');
+
+DELETE FROM veiculos WHERE marca = 'Chevrolet' AND cor = 'Preto';
+
+DELETE FROM veiculos WHERE ano < 2020 AND cor = 'Branco';
+
+DELETE FROM veiculos WHERE preco BETWEEN 50000.00 AND 100000.00;
+
+DELETE FROM veiculos WHERE marca = 'Nissan' AND cor = 'Preto';
+
+DELETE FROM veiculos WHERE modelo LIKE '%SUV%' AND ano >= 2021;
+
+/*funções*/
+
+SELECT COUNT(*) FROM veiculos;
+
+SELECT COUNT(*) FROM veiculos WHERE cor = 'Preto';
+
+SELECT SUM(preco) FROM veiculos;
+
+SELECT AVG(preco) FROM veiculos;
+
+SELECT MAX(preco) FROM veiculos;
+
+SELECT MIN(preco) FROM veiculos;
+
+SELECT COUNT(DISTINCT marca) FROM veiculos;
+
+SELECT AVG(ano) FROM veiculos;
+
+SELECT SUM(preco) FROM veiculos WHERE ano >= 2020;
+
+SELECT COUNT(*) FROM veiculos WHERE modelo LIKE '%Toyota%';

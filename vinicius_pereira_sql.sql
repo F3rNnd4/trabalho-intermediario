@@ -80,6 +80,84 @@ UPDATE veiculos SET ano = 2022 WHERE preco > 150000.00;
 
 UPDATE veiculos SET preco = preco * 1.05 WHERE cor = 'Preto';
 
+UPDATE veiculos SET cor = 'Branco' WHERE marca = 'Toyota';
+
+UPDATE veiculos SET ano = 2022 WHERE marca = 'Honda';
+
+UPDATE veiculos SET cor = 'Vermelho' WHERE preco < 100000.00;
+
+UPDATE veiculos SET ano = 2023 WHERE marca = 'Tesla';
+
+UPDATE veiculos SET preco = preco + 2000.00 WHERE cor = 'Prata';
+
+UPDATE veiculos SET preco = preco * 1.1 WHERE num_portas = 4;
+
+UPDATE veiculos SET cor = 'Prata' WHERE marca = 'Ford';
+
+UPDATE veiculos SET ano = 2021 WHERE preco < 80000.00;
+
+UPDATE veiculos SET preco = preco + 500.00 WHERE transmissao = 'Automatico';
+
+UPDATE veiculos SET modelo = 'Golf' WHERE marca = 'Volkswagen';
+
+UPDATE veiculos SET preco = preco * 0.95 WHERE num_lugares > 5;
+
+--DELETE--
+
+DELETE FROM veiculos WHERE marca = 'Honda';
+
+DELETE FROM veiculos WHERE ano = 2022;
+
+DELETE FROM veiculos WHERE preco > 150000.00;
+
+DELETE FROM veiculos WHERE cor = 'Preto';
+
+DELETE FROM veiculos WHERE marca = 'Toyota';
+
+DELETE FROM veiculos WHERE modelo = 'Golf';
+
+DELETE FROM veiculos WHERE transmissao = 'Automatico';
+
+DELETE FROM veiculos WHERE num_lugares > 5;
+
+DELETE FROM veiculos WHERE ano = 2021;
+
+DELETE FROM veiculos WHERE preco < 80000.00;
+
+
+--Funções--
+
+SELECT SUM(preco) AS total_price FROM veiculos;
+
+SELECT AVG(preco) AS average_price FROM veiculos;
+
+SELECT COUNT(*) AS num_vehicles FROM veiculos;
+
+SELECT MAX(preco) AS highest_price FROM veiculos;
+
+SELECT MIN(preco) AS lowest_price FROM veiculos;
+
+SELECT *
+FROM veiculos
+WHERE marca IN ('Toyota', 'Honda', 'Ford');
+
+SELECT preco,
+  CASE
+    WHEN preco > 150000 THEN preco * 1.05
+    WHEN preco > 100000 THEN preco * 1.03
+    ELSE preco * 1.01
+  END AS discount
+FROM veiculos;
+
+SELECT CORR(preco, ano) AS correlation FROM veiculos;
+
+SELECT COVAR(preco, ano) AS covariance FROM veiculos;
+
+SELECT preco, RANK() OVER (ORDER BY preco DESC) AS rank
+FROM veiculos;
+
+
+
 
 
 SELECT * FROM veiculos;

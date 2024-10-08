@@ -43,5 +43,87 @@ SELECT modelo, cor FROM veiculos;
 SELECT marca, preco FROM veiculos ORDER BY preco;
 SELECT modelo, ano FROM veiculos ORDER BY ano DESC;
 SELECT modelo, preco FROM veiculos ORDER BY preco DESC LIMIT 5;
-SELECT * FROM veiculos ;
-SELECT ;
+SELECT marca, cor, preco FROM veiculos WHERE preco > 30000;
+SELECT modelo, ano, cor FROM veiculos WHERE cor = 'Vermelho';
+
+            -UPDATE: 17 Updates
+
+UPDATE veiculos SET cor = 'Branco' WHERE marca = 'Tesla';
+SELECT * FROM veiculos;
+UPDATE veiculos SET modelo = 'Camaro' WHERE marca = Chevrolet;
+SELECT * FROM veiculos;
+UPDATE veiculos SET cor = 'Preto' WHERE marca = 'McLaren';
+SELECT * FROM veiculos;
+UPDATE veiculos SET marca = 'Ford' WHERE preco < 35000;
+SELECT * FROM veiculos;
+UPDATE veiculos SET cor = 'Rosa' WHERE cor = 'Azul';
+SELECT * FROM veiculos;
+UPDATE veiculos SET preco + 100000 WHERE cor = 'Laranja';
+SELECT * FROM veiculos;
+UPDATE veiculos SET preco = NULL WHERE marca = 'Toyota';
+SELECT * FROM veiculos;
+UPDATE veiculos SET ano = 2022 WHERE ano = 2020 AND cor = 'Amarelo';
+SELECT * FROM veiculos;
+UPDATE veiculos SET ano = 2021 WHERE id = 185;
+SELECT * FROM veiculos;
+UPDATE veiculos SET ano = 2000 WHERE cor = 'Prata';
+SELECT * FROM veiculos;
+UPDATE veiculos SET preco = preco - 20000 WHERE cor = 'Branco';
+SELECT * FROM veiculos;
+UPDATE veiculos SET preco = 1000000 WHERE marca = 'Nissan';
+SELECT * FROM veiculos;
+UPDATE veiculos SET modelo = 'Roma' WHERE ano = 2019;
+SELECT * FROM veiculos;
+UPDATE veiculos SET ano = 2021 WHERE marca = 'Honda';
+SELECT * FROM veiculos;
+UPDATE veiculos SET marca = 'Hyundai' WHERE modelo = 'Creta';
+SELECT * FROM veiculos;
+UPDATE veiculos SET preco = preco * 3 WHERE marca = 'Pagani';
+SELECT * FROM veiculos;
+UPDATE veiculos SET cor = 'Roxo' WHERE marca = 'Audi' AND ano > 2020;
+SELECT * FROM veiculos;
+
+            -DELETE: 10 deletes
+
+DELETE FROM veiculos WHERE id = 178;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE cor = 'Roxo';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE ano < 2019;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE marca LIKE 'H%';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE cor = 'Rosa' AND ano = 2020;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE preco = (SELECT MAX(preco) FROM veiculos);
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE preco > 160000;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE marca = 'Tesla';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE modelo = 'Chiron';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE modelo = 'Aventador' AND cor = 'Prata';
+SELECT * FROM veiculos;
+
+            -FUNÇÕES: 10 funções 
+
+SELECT marca, COUNT(*) AS total_veiculos FROM veiculos GROUP BY marca;
+
+SELECT SUM(preco) AS total_precos FROM veiculos;
+
+SELECT AVG(ano) AS media_anos FROM veiculos;
+
+SELECT MIN(preco) AS minimo_preco FROM veiculos;
+
+SELECT MAX(preco) AS maximo_preco FROM veiculos;
+
+SELECT modelo, ROUND(preco) AS precos_arre FROM veiculos;
+
+SELECT modelo, LENGTH(modelo) AS tamanho_modelo FROM veiculos;
+
+SELECT modelo, UPPER(modelo) AS modelo_maiusculo FROM veiculos;
+
+SELECT modelo, LOWER(modelo) AS modelo_minusculo FROM veiculos;
+
+SELECT modelo,ano, EXTRACT(YEAR FROM CURRENT_DATE) - ano AS idade FROM veiculos WHERE id = 177;

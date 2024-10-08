@@ -108,3 +108,22 @@ SELECT * FROM veiculos;
 
             -FUNÇÕES: 10 funções 
 
+SELECT marca, COUNT(*) AS total_veiculos FROM veiculos GROUP BY marca;
+
+SELECT SUM(preco) AS total_precos FROM veiculos;
+
+SELECT AVG(ano) AS media_anos FROM veiculos;
+
+SELECT MIN(preco) AS minimo_preco FROM veiculos;
+
+SELECT MAX(preco) AS maximo_preco FROM veiculos;
+
+SELECT modelo, ROUND(preco) AS precos_arre FROM veiculos;
+
+SELECT modelo, LENGTH(modelo) AS tamanho_modelo FROM veiculos;
+
+SELECT modelo, UPPER(modelo) AS modelo_maiusculo FROM veiculos;
+
+SELECT modelo, LOWER(modelo) AS modelo_minusculo FROM veiculos;
+
+SELECT modelo,ano, EXTRACT(YEAR FROM CURRENT_DATE) - ano AS idade FROM veiculos WHERE id = 177;

@@ -11,7 +11,7 @@ ano INTEGER,
 preco DECIMAL(15, 2 )
 );
 
--- INSERT´S--
+-- INSERTS--
 INSERT INTO veiculos (marca, modelo, cor, ano, preco) VALUES ('Toyota', 'Corolla', 'Branco', 2020, 90000.00);
 
 INSERT INTO veiculos (marca, modelo, cor, ano, preco) VALUES ('Honda', 'Civic', 'Preto', 2021, 105000.00);
@@ -86,7 +86,7 @@ SELECT * FROM veiculos WHERE ano BETWEEN 2020 AND 2021;
 
 SELECT * FROM veiculos WHERE marca = 'Toyota';
 
-SELECT * FROM veiculos ORDER BY preco DESC;
+SELECT * FROM veiculos ORDER BY preco DESC LIMIT 10;
 
 SELECT * FROM veiculos WHERE marca LIKE 'P%';
 
@@ -106,3 +106,80 @@ SELECT * FROM veiculos WHERE ano < 2020 ORDER BY ano ASC;
 
 --UPDATE--
 
+UPDATE veiculos SET ano = 2024 WHERE marca = 'Honda';
+
+UPDATE veiculos SET preco =  3300000.00 WHERE modelo = 'Chiron';
+
+UPDATE veiculos SET cor = 'Vermelho' WHERE cor = 'Azul';
+
+UPDATE veiculos SET modelo = 'Civicão' WHERE id = 2;
+
+UPDATE veiculos SET ano = 2022 WHERE preco < 150000.00;
+
+UPDATE veiculos SET cor = 'Amarelo'  WHERE marca = 'Toyota';
+
+UPDATE veiculos SET ano = 2023 WHERE preco > 150000.00;
+
+UPDATE veiculos SET cor = preco * 1.25 WHERE cor = 'Amarelo';
+
+UPDATE veiculos SET ano = 2010 WHERE preco < 80000.00;
+
+UPDATE veiculos SET preco = preco * 1.50 WHERE cor = 'Preto';
+
+UPDATE veiculos SET modelo = 'Honda 2k25' WHERE marca = 'Honda';
+
+UPDATE veiculos SET modelo = BYD WHERE id = 10;
+
+UPDATE veiculos SET preco = preco * 1.80 WHERE marca = 'BYD';
+
+UPDATE veiculos SET ano = 2026 WHERE preco > 300000.00;
+
+UPDATE veiculos SET modelo = GTR WHERE id = 5;
+
+UPDATE veiculos SET preco = preco * 0.80 WHERE marca = 'BYD';
+
+UPDATE veiculos SET ano = 2027 WHERE ano < 2020;
+
+-- DELETE --
+
+DELETE FROM veiculos WHERE marca = 'BYD';
+
+DELETE FROM veiculos WHERE preco < 70000.00;
+
+DELETE FROM veiculos WHERE ano < 2019;
+
+DELETE FROM veiculos WHERE cor = 'Amarelo';
+
+DELETE FROM veiculos WHERE modelo = 'Honda 2k25';
+
+DELETE FROM veiculos WHERE marca = 'Mercedes-Benz'
+
+DELETE FROM veiculos WHERE id = 10 OR id = 11 OR id = 12;
+
+DELETE FROM veiculos WHERE ano < 2020 OR ano > 2023;
+
+DELETE FROM veiculos WHERE preco < 70000.00 OR preco > 200000.00;
+
+DELETE FROM veiculos WHERE cor = 'Preto' OR cor = 'Vermelho';
+
+-- FUNCTIONS --
+
+SELECT SUM(preco) AS total_preco FROM veiculos;
+
+SELECT AVG(preco) AS media_preco FROM veiculos;
+
+SELECT COUNT(*) AS total_branco FROM veiculos WHERE cor = 'Branco';
+
+SELECT AVG(ano) AS media_ano FROM veiculos;
+
+SELECT COUNT(*) AS total_toyota FROM veiculos WHERE marca = 'Toyota';
+
+SELECT modelo, ROUND(preco) AS total_preco_toyota FROM veiculos WHERE marca = 'Toyota';
+
+SELECT MIN(preco) AS total_preco_novos FROM veiculos WHERE ano > 2021;
+
+SELECT cor, COUNT(*) AS total_por_cor FROM veiculos GROUP BY cor;
+
+SELECT SUM(preco) AS total_preco_toyota FROM veiculos WHERE marca = 'Toyota';
+
+SELECT MAX(ano) AS ano_max FROM veiculos;

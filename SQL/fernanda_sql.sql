@@ -82,3 +82,29 @@ UPDATE veiculos SET preco = preco * 3 WHERE marca = 'Pagani';
 SELECT * FROM veiculos;
 UPDATE veiculos SET cor = 'Roxo' WHERE marca = 'Audi' AND ano > 2020;
 SELECT * FROM veiculos;
+
+            -DELETE: 10 deletes
+
+DELETE FROM veiculos WHERE id = 178;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE cor = 'Roxo';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE ano < 2019;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE marca LIKE 'H%';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE cor = 'Rosa' AND ano = 2020;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE preco = (SELECT MAX(preco) FROM veiculos);
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE preco > 160000;
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE marca = 'Tesla';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE modelo = 'Chiron';
+SELECT * FROM veiculos;
+DELETE FROM veiculos WHERE modelo = 'Aventador' AND cor = 'Prata';
+SELECT * FROM veiculos;
+
+            -FUNÇÕES: 10 funções 
+

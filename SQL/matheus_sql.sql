@@ -141,4 +141,4 @@ SELECT AVG(ano) FROM veiculos;
 
 SELECT SUM(preco) FROM veiculos WHERE ano >= 2020;
 
-SELECT COUNT(*) FROM veiculos WHERE modelo LIKE '%Toyota%';
+SELECT COUNT(*) FROM veiculos WHERE marca LIKE '%Toyota%';

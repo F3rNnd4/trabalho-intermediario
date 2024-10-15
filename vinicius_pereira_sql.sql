@@ -90,17 +90,17 @@ UPDATE veiculos SET ano = 2023 WHERE marca = 'Tesla';
 
 UPDATE veiculos SET preco = preco + 2000.00 WHERE cor = 'Prata';
 
-UPDATE veiculos SET preco = preco * 1.1 WHERE num_portas = 4;
+UPDATE veiculos SET preco = preco * 1.1 WHERE marca = 4;
 
 UPDATE veiculos SET cor = 'Prata' WHERE marca = 'Ford';
 
 UPDATE veiculos SET ano = 2021 WHERE preco < 80000.00;
 
-UPDATE veiculos SET preco = preco + 500.00 WHERE transmissao = 'Automatico';
+UPDATE veiculos SET preco = preco + 500.00 WHERE 'honda' = 'Automatico';
 
 UPDATE veiculos SET modelo = 'Golf' WHERE marca = 'Volkswagen';
 
-UPDATE veiculos SET preco = preco * 0.95 WHERE num_lugares > 5;
+UPDATE veiculos SET preco = preco * 0.95 WHERE 'toyota' > 5;
 
 --DELETE--
 
@@ -118,7 +118,7 @@ DELETE FROM veiculos WHERE modelo = 'Golf';
 
 DELETE FROM veiculos WHERE transmissao = 'Automatico';
 
-DELETE FROM veiculos WHERE num_lugares > 5;
+DELETE FROM veiculos WHERE modelo = 'fusca';
 
 DELETE FROM veiculos WHERE ano = 2021;
 

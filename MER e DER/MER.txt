@@ -1,7 +1,4 @@
 ---MER do Trabalho Intermediário---
-     --O que é o MER e DER?--
-
-
 
 Entidade: Veículo - Proprietário
 

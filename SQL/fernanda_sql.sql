@@ -126,4 +126,4 @@ SELECT modelo, UPPER(modelo) AS modelo_maiusculo FROM veiculos;
 
 SELECT modelo, LOWER(modelo) AS modelo_minusculo FROM veiculos;
 
-SELECT modelo,ano, EXTRACT(YEAR FROM CURRENT_DATE) - ano AS idade FROM veiculos WHERE id = 177;
+SELECT modelo, ano, EXTRACT(YEAR FROM CURRENT_DATE) - ano AS idade FROM veiculos WHERE id = 177;
